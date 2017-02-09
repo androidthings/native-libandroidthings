@@ -1,12 +1,15 @@
-Android Things Native API
-=========================
+Android Things Native Library
+=============================
 
-This repository contains the symbols and the headers for the Android Things Native API.
+This repository contains the symbols and the headers for the Android Things
+[Native PIO API](https://developer.android.com/things/sdk/pio/native.html) for the following architecture:
+- `armeabi-v7a`
+- `x86`
 
 Usage
 =====
 
-- Unzip the latest [release](releases) in the native project directory (or in a shared
+- Unzip the latest [release](/androidthings/native-libandroidthings/releases) in the native project directory (or in a shared
   location if you have many native projects).
 - Add the following lines to the native project `CMakeLists.txt`:
 ```
