@@ -9,8 +9,7 @@ This repository contains the symbols and the headers for the Android Things
 Usage
 =====
 
-- Unzip the latest [release](/androidthings/native-libandroidthings/releases) in the native project directory (or in a shared
-  location if you have many native projects).
+- Unzip the latest [release](https://github.com/androidthings/native-libandroidthings/releases) in the native project directory (or in a shared location if you have many native projects).
 - Add the following lines to the native project `CMakeLists.txt`:
 ```
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} <path_to_FindAndroidThings_directory.cmake>)
