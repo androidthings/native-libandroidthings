@@ -21,6 +21,7 @@
 
 #include "gpio.h"
 #include "i2c_device.h"
+#include "i2s_device.h"
 #include "pwm.h"
 #include "spi_device.h"
 #include "uart_device.h"
@@ -125,6 +126,31 @@ int APeripheralManagerClient_openUartDevice(
     const APeripheralManagerClient* client,
     const char* name,
     AUartDevice** dev);
+
+/// Returns the list of I2S buses.
+/// This does not take ownership into account.
+/// The list must be freed by the caller.
+/// @param client Pointer to the APeripheralManagerClient struct.
+/// @param num_i2s_buses Output pointer to the number of elements in the list.
+/// @return The list of I2S buses.
+char** APeripheralManagerClient_listI2sDevices(
+    const APeripheralManagerClient* client, int* num_i2s_buses);
+
+/// Opens an I2S device and takes ownership of it.
+/// @param client Pointer to the APeripheralManagerClient struct.
+/// @param name Name of the I2S device.
+/// @param encoding Device pcm encoding.
+/// @param channels Number of channels.
+/// @param rate Device rate in Hz.
+/// @param dev Output pointer to the AI2sDevice struct. Empty on error.
+/// @return 0 on success, errno on error
+int APeripheralManagerClient_openI2sDevice(
+    const APeripheralManagerClient* client,
+    const char* name,
+    APcmEncoding encoding,
+    int channels,
+    int rate,
+    AI2sDevice** dev);
 
 /// Creates a new client.
 /// @return A pointer to the created client. nullptr on errors.
