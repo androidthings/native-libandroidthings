@@ -142,14 +142,16 @@ char** APeripheralManagerClient_listI2sDevices(
 /// @param encoding Device pcm encoding.
 /// @param channels Number of channels.
 /// @param rate Device rate in Hz.
+/// @param flags Specify device supporting input, output or both.
 /// @param dev Output pointer to the AI2sDevice struct. Empty on error.
 /// @return 0 on success, errno on error
 int APeripheralManagerClient_openI2sDevice(
     const APeripheralManagerClient* client,
     const char* name,
-    APcmEncoding encoding,
+    AI2sEncoding encoding,
     int channels,
     int rate,
+    int flags,
     AI2sDevice** dev);
 
 /// Creates a new client.
